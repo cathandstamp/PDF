@@ -12,6 +12,8 @@ import openpyxl
 import random, string
 import time
 
+from .custmize import merge_excel
+
 def convert_pdf_to_txt(path):
     """pdfからテキスト情報を抽出する関数"""
 
@@ -54,6 +56,8 @@ def create_excel(upload_dir,user_name):
         result_txt = convert_pdf_to_txt(pdf)
         result_list.append(result_txt)
 
-    # merge_excel(book,result_list,work_file) #Excelにデータをセット           
+    # merge_excel(book,result_list,work_file) #Excelにデータをセット   kokokara
+        merge_excel(book,result_list,work_file) #Excelにデータをセット    
+
     #個人ディレクトリへコピー
     shutil.move(work_file, user_dir)
